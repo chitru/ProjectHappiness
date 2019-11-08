@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
+$primary: #beeadf;
+$secondary: #50bab8;
+$dark: #333;
+$grey: #dfe2e4;
+$light: #fff;
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, label, a {
+  font-family: 'Baloo', cursive!important;
+}
+
+.btn {
+  padding: .5rem 2.5rem!important;
+}
+
+.btn-primary {
+  color: $dark!important;
+  background-color: $primary!important;
+  border-color: $primary!important;
+  font-weight: bold!important;
+}
+
+.form-control {
+  background-color: $grey!important;
+}
+
+.formBody {
+  padding: 60px;
+  a {
+    color: $secondary;
+  }
+  a:hover {
+    color: $dark;
+    transition: .2s;
+  }
+}
+
+.nextText {
+  padding: 100px;
+  padding-left: 0;
+  font-weight: 200;
+}
+
+.img-responsive {
+  margin: 'auto';
+  display: 'block';
+  max-width: '100%';
+  max-height: '100%';
+}
+
+#stepper {
+
+}
+
+.react-icons{
+  font-size: 2rem;
+  &:hover {
+  cursor: pointer;
+  }
+}
