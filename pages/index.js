@@ -1,5 +1,4 @@
 import '../styles/style.scss'
-import ApplicationForm from './applicationForm'
 import Link from 'next/link'
 import { Container, Row, Col, Nav, Navbar, NavDropdown, Form, FormControl, Button, Image } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'

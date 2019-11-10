@@ -1,8 +1,15 @@
 import React from "react";
-import { Button } from 'react-bootstrap'
+import { Button, Form, Col } from 'react-bootstrap'
 
 class AssetsLiability extends React.Component {
-  state = { values: [{ value: null }] };
+  state = {
+    fields: [{
+      asset: null,
+      aamount: null,
+      liability: null,
+      lamount: null
+    }]
+  };
 
   saveAndContinue = (e) => {
     e.preventDefault();
@@ -14,15 +21,20 @@ back  = (e) => {
     this.props.prevStep();
 }
 
-  handleChange(i, event) {
-    let values = [...this.state.values];
-    values[i].value = event.target.value;
-    this.setState({ values });
-  }
+  // handleChange(i, event) {
+  //   let values = [...this.state.values];
+  //   values[i].value = event.target.value;
+  //   this.setState({ values });
+  // }
 
   addClick() {
-    this.setState(prevState => ({
-      values: [...prevState.values, { value: null }]
+    this.setState((prevState) => ({
+      fields: [...prevState.fields, {
+        asset: null,
+        aamount: null,
+        liability: null,
+        lamount: null
+      }]
     }));
   }
 
@@ -34,29 +46,85 @@ back  = (e) => {
 
 
   render() {
+    let fields = this.state
+    const { values } = this.props
     return (
       <div>
-      <form>
-        {this.state.values.map((el, i) => (
-          <div key={i}>
-            <input
+      <Form>
+        <Form.Row>
+          <Form.Group as={Col}>
+            <Form.Label>Assets</Form.Label>
+            <Form.Control
               type="text"
-              value={el.value || ""}
-              onChange={e => this.handleChange(i, e)}
+              onChange={ this.props.handleChange('assetsCom') }
+              defaultValue={values.assetsCom}
             />
-            <input
-              type="button"
-              value="remove"
-              onClick={() => this.removeClick(i)}
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Amount</Form.Label>
+            <Form.Control
+              type="number"
+              onChange={ this.props.handleChange('aValue')}
             />
-          </div>
-        ))}
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          <Form.Group as={Col}>
+            <Form.Control
+            type="text"
+              onChange={ this.props.handleChange('assetsCom1') }
+              defaultValue={values.assetsCom1}
+            />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Control
+              type="number"
+              onChange={ this.props.handleChange('aValue1')}
+              defaultValue={values.aValue1}
+            />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          <Form.Group as={Col}>
+            <Form.Label>Liability</Form.Label>
+          <Form.Control
+            type="text"
+            onChange={ this.props.handleChange('liabilityCom') }
+            defaultValue={values.liabilityCom}
+            />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Amount</Form.Label>
+          <Form.Control
+            type="number"
+            onChange={ this.props.handleChange('lvalue') }
+            defaultValue={values.lvalue}
+            />
+          </Form.Group>
+        </Form.Row>
 
-        <input type="button" value="add more" onClick={() => this.addClick()} />
-        <input type="submit" value="Submit" />
-      </form>
-      <Button onClick={this.back} style={{ marginRight: '20px' }}>BACK</Button>
-      <Button variant="primary" onClick={this.saveAndContinue}>NEXT</Button>
+        <Form.Row>
+          <Form.Group as={Col}>
+          <Form.Control
+            type="text"
+            onChange={ this.props.handleChange('liabilityCom1') }
+            defaultValue={values.liabilityCom1}
+            />
+          </Form.Group>
+          <Form.Group as={Col}>
+          <Form.Control
+            type="number"
+            onChange={ this.props.handleChange('lvalue1') }
+            defaultValue={values.lvalue1}
+          />
+          </Form.Group>
+        </Form.Row>
+            <Form.Row style={{ float: 'right', paddingTop: '20px' }}>
+                    {/* <Button onClick={() => this.addClick()} style={{ marginRight: '20px' }}>ADD MORE</Button> */}
+                    <Button onClick={this.back} style={{ marginRight: '20px' }}>BACK</Button>
+                    <Button variant="primary" onClick={this.saveAndContinue}>NEXT</Button>
+                </Form.Row>
+      </Form>
       </div>
     );
   }
