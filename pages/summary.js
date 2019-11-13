@@ -1,6 +1,23 @@
 import React from 'react'
 import { Button , Table, Form } from 'react-bootstrap'
+
+// Pipedrive token
+// const Pipedrive = require('pipedrive');
+// const pipedrive = new Pipedrive.Client('ea07c3e7eef293415508d1acfc8142ac27f82502', { strictMode: true });
+
+// Dropbox
+// const fetch = require('isomorphic-fetch'); 
+// const Dropbox = require('dropbox').Dropbox;
+// const dbx = new Dropbox({ accessToken: 'pHSP8vGgNXAAAAAAAAAAK6TD-d-YOGMoLrQYpllSwJ92kO7RdPh3Eo1Y2v3-gdcf', fetch: fetch});
+
+
 class Summary extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
     saveAndContinue = (e) => {
         e.preventDefault();
         this.props.nextStep();
@@ -13,7 +30,7 @@ class Summary extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log("form handling is correct.");
+        console.log("form handling is correct." );
     }
     render() {
         const { values: { firstName, lastName, email, phone, address, comment, companyName, acn, companyAddress, assetsCom, liabilityCom, assetsUp, liabilityUp, identification, personalInformation, compAddress, assetsSum} } = this.props
@@ -23,7 +40,8 @@ class Summary extends React.Component {
             <tbody>
                 <tr>
                     <td>First Name</td>
-                    <td>{firstName}</td>
+                    <td>{firstName}
+                    </td>
                 </tr>
                 <tr>
                     <td>Last Name</td>

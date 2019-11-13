@@ -7,6 +7,7 @@ import Summary from './summary'
 import AssetsLiability from './AssetsLiability'
 import Confirm from './confirm'
 import { Container, Row, Col, Image } from 'react-bootstrap'
+import Link from 'next/link'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 class ApplicationForm extends React.Component {
@@ -72,11 +73,31 @@ class ApplicationForm extends React.Component {
                     <Row
                         nogutters="true"
                     >
-                        <Col xs={12} sm={12} md={3} lg={3}>
+                        <Col xs={12} sm={12} md={3} lg={3} className="appForm">
+                        <div
+                                className="main"
+                            >
                             <Image
                                 src = "../static/back.png"
                                 fluid
                             />
+                            </div>
+                            <div
+                                className="logo"
+                            >
+                            <Link href="/index"><a>
+                            <Image
+                                src="../static/logov.png"
+                                />
+                            </a></Link>
+                            </div>
+                            <div
+                                className="chat"
+                            >
+                            <Image
+                                src="../static/chat.png"
+                            />
+                            </div>
                         </Col>
                         <Col xs={12} sm={12} md={8} lg={8}>
                         <div className="formBody">

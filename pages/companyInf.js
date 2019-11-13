@@ -5,15 +5,6 @@ import AssetsLiability from './AssetsLiability'
 import { IoIosAddCircleOutline, IoIosRemoveCircleOutline } from 'react-icons/io'
 // import { IconContext } from "react-icons"
 class CompanyInf extends React.Component {
-    // constructor() {
-    //     super()
-    //     this.state = { values: [{ value: null }] };
-    //     this.handleChange = this.handleChange.bind(this)
-    //     this.addClick = this.addClick.bind(this)
-    //     this.removeClick = this.removeClick.bind(this)
-
-    // }
-
     saveAndContinue = (e) => {
         e.preventDefault();
         this.props.nextStep();

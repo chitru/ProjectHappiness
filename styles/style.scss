@@ -2,13 +2,14 @@
 
 $primary: #beeadf;
 $secondary: #50bab8;
-$dark: #333;
+$dark: #171b2c;
 $grey: #dfe2e4;
 $light: #fff;
 
 body{
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, label, a {
@@ -47,27 +48,91 @@ h1, h2, h3, h4, h5, h6, p, label, a {
   font-weight: 200;
 }
 
-.img-responsive {
-  margin: 'auto';
-  display: 'block';
-  max-width: '100%';
-  max-height: '100%';
-}
-
-#stepper {
-
-}
-
-.react-icons{
-  font-size: 2rem;
-  &:hover {
-  cursor: pointer;
+.mainWrap {
+  background-color: $dark;
+  color: $light;
+  .lightText {
+    color: $primary;
+  }
+  h1,h2 {
+    font-size: 2.5rem;
+  }
+  h1 {
+    margin: 3rem 0;
+  }
+  .main img{
+    position: relative;
+  }
+  .logo img{
+    position: absolute;
+    width: 7rem;
+    margin: 1rem;
+    top: 0;
+  }
+  .chat img{
+    position: absolute;
+    width: 7rem;
+    margin: 1rem;
+    bottom: 0;
+  }
+  .sectionSecond {
+    margin: 0;
+    padding: 0;
+    height: 1vh;
+    .textAim {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      p {
+        font-size: 2.5rem;
+      }
+      button {
+        font-family: 'Baloo', cursive!important;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .thirdSection, .fourthSection{
+    h2 {
+      font-size: 2.5rem;
+      margin: 2.5rem 0;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+    button {
+      font-family: 'Baloo', cursive!important;
+      font-size: 1.2rem;
+    }
   }
 }
+
+
 
 .assetWrap {
   input {
     margin: 10px;
     margin-left: 0;
+  }
+}
+
+.appForm {
+  .main img{
+    position: relative;
+  }
+  .logo img{
+    position: absolute;
+    width: 7rem;
+    margin: 1rem;
+    top: 0;
+  }
+  .chat img{
+    position: absolute;
+    width: 7rem;
+    margin: 1rem;
+    bottom: 0;
   }
 }
