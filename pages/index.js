@@ -59,7 +59,7 @@ class Home extends React.Component {
                             <Row style={{ display: 'flex', alignItems: 'center', height: '80vh'}}>
                                 <Col>
                                     <h1>Welcome to<br/>Launchcap.</h1>
-                                    <h2>Your <span class="lightText">fast, reliable</span> <br/> and <span class="lightText">personal</span> source of <br/>funds up to <span class="lightText">$10 <br/>million dollars</span></h2>
+                                    <h2>Your <span className="lightText">fast, reliable</span> <br/> and <span className="lightText">personal</span> source of <br/>funds up to <span className="lightText">$10 <br/>million dollars</span></h2>
                                 </Col>
                             </Row>
 
